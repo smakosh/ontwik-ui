@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { ButtonProps } from '../../interfaces'
+import styled from 'styled-components';
+import { ButtonProps } from '../../interfaces';
 
 const Button = styled.button<ButtonProps>`
 	text-decoration: none;
@@ -14,33 +14,28 @@ const Button = styled.button<ButtonProps>`
 	}
 
 	${({ wide }) =>
-		wide &&
-		`
+    wide &&
+    `
       width: 100%;
       text-align: center;
 	`}
 
 	${({
-		variant,
-		state,
-		theme: {
-			colors: {
-				primary,
-				secondary,
-				white,
-				stateColors
-			}
-		}
-	}) => {
-		switch (variant) {
-			case "blank":
-				return `
+    variant,
+    state,
+    theme: {
+      colors: { primary, secondary, white, stateColors },
+    },
+  }) => {
+    switch (variant) {
+      case 'blank':
+        return `
 					background: none;
 					border: none;
-					color: ${stateColors["danger"]};
+					color: ${stateColors['danger']};
 				`;
-			case "cta":
-				return `
+      case 'cta':
+        return `
 					color: ${white};
 					background: ${state ? stateColors[state] : secondary[900]};
 					border: 1px solid transparent;
@@ -49,8 +44,8 @@ const Button = styled.button<ButtonProps>`
 						background: ${state ? stateColors[state] : secondary[700]};
 					}
 				`;
-			case "primary":
-				return `
+      case 'primary':
+        return `
 					color: ${white};
 					background: ${state ? stateColors[state] : primary[900]};
 					border: 1px solid transparent;
@@ -59,8 +54,8 @@ const Button = styled.button<ButtonProps>`
 						background: ${state ? stateColors[state] : primary[700]};
 					}
 				`;
-			case "secondary":
-				return `
+      case 'secondary':
+        return `
 					color: ${state ? stateColors[state] : primary[900]};
 					background: ${white};
 					border: ${state ? stateColors[state] : primary[900]} 1px solid;
@@ -71,35 +66,35 @@ const Button = styled.button<ButtonProps>`
 						border-color: ${state ? stateColors[state] : primary[900]} 1px solid;
 					}
 				`;
-			default:
-				return null;
-		}
-	}}
+      default:
+        return null;
+    }
+  }}
 
 	${({ size }) => {
-		switch (size) {
-			case "xlarge":
-				return `
+    switch (size) {
+      case 'xlarge':
+        return `
 					padding: 1rem 2rem;
 				`;
-			case "large":
-				return `
+      case 'large':
+        return `
 					padding: 0.7rem 2rem;
 				`;
-			case "medium":
-				return `
+      case 'medium':
+        return `
 						padding: 0.4rem 1.8rem;
 						font-size: 10pt;
 					`;
-			case "small":
-				return `
+      case 'small':
+        return `
 						padding: 0.3rem 1.6rem;
 						font-size: 8pt;
 					`;
-			default:
-				return null;
-		}
-	}}
+      default:
+        return null;
+    }
+  }}
 	
 	&:disabled {
 		background-color: ${({ theme }) => theme.colors.black[200]};
@@ -107,4 +102,4 @@ const Button = styled.button<ButtonProps>`
 	}
 `;
 
-export default Button
+export default Button;

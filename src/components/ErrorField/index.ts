@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ErrorField = styled.span`
-	color: #f44336;
+  color: #f44336;
 `;
 
-export default ErrorField
+export default ErrorField;
