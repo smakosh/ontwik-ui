@@ -5,6 +5,10 @@ export interface ButtonProps {
   variant?: string;
   state?: string;
   size?: string;
+  uppercase?: boolean;
+  bg?: string;
+  color?: string;
+  borderColor?: string;
 }
 
 export interface InputFieldProps {
