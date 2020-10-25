@@ -1,12 +1,16 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Thing } from '../.';
+import { Button, OntwikProvider } from '../.';
 
 const App = () => {
   return (
     <div>
-      <Thing />
+      <OntwikProvider>
+        <Button type="button" variant="primary" size="large">
+          Test
+        </Button>
+      </OntwikProvider>
     </div>
   );
 };

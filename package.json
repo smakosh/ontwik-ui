@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -35,17 +35,17 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "ui",
+  "name": "ontwik-ui",
   "author": "smakosh",
   "module": "dist/ui.esm.js",
   "size-limit": [
     {
       "path": "dist/ui.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "20 KB"
     },
     {
       "path": "dist/ui.esm.js",
-      "limit": "10 KB"
+      "limit": "20 KB"
     }
   ],
   "devDependencies": {
@@ -71,5 +71,23 @@
   },
   "dependencies": {
     "styled-components": "^5.2.0"
-  }
+  },
+  "description": "A headless UI library.",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ontwik-Dev/ontwik-ui.git"
+  },
+  "keywords": [
+    "components",
+    "theme",
+    "headless"
+  ],
+  "bugs": {
+    "url": "https://github.com/Ontwik-Dev/ontwik-ui/issues"
+  },
+  "homepage": "https://github.com/Ontwik-Dev/ontwik-ui#readme"
 }

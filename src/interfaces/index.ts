@@ -5,6 +5,10 @@ export interface ButtonProps {
   variant?: string;
   state?: string;
   size?: string;
+  uppercase?: boolean;
+  bg?: string;
+  color?: string;
+  borderColor?: string;
 }
 
 export interface InputFieldProps {
@@ -12,4 +16,11 @@ export interface InputFieldProps {
   children: ReactChild;
   error?: string | boolean;
   relative?: boolean;
+}
+
+export interface StateAndColor {
+  state?: 'danger' | 'success' | 'warning';
+  color?: string;
+  bg?: string;
+  borderColor?: string;
 }
