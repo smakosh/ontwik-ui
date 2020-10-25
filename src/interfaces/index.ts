@@ -17,3 +17,10 @@ export interface InputFieldProps {
   error?: string | boolean;
   relative?: boolean;
 }
+
+export interface StateAndColor {
+  state?: 'danger' | 'success' | 'warning';
+  color?: string;
+  bg?: string;
+  borderColor?: string;
+}
