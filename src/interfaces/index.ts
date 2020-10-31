@@ -9,6 +9,8 @@ export interface ButtonProps {
   bg?: string;
   color?: string;
   borderColor?: string;
+  gradients?: [string, string];
+  degree?: number;
 }
 
 export interface InputFieldProps {
@@ -23,4 +25,6 @@ export interface StateAndColor {
   color?: string;
   bg?: string;
   borderColor?: string;
+  gradients?: [string, string];
+  degree?: number;
 }
