@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ButtonProps } from '../../interfaces';
 
-const Button = styled.button<ButtonProps>`
+export const StyledButton = styled.button<ButtonProps>`
   text-decoration: none;
   cursor: pointer;
   transition: 0.3s;
@@ -37,27 +37,26 @@ const Button = styled.button<ButtonProps>`
       text-align: center;
 	`}
 
-  ${({
-    variant,
-    state,
-    bg,
-    borderColor,
-    color,
-    theme: {
-      buttons: { primary, secondary, ghost },
-    },
-  }) => {
-    switch (variant) {
-      case 'primary':
-        return primary({ state, bg });
-      case 'secondary':
-        return secondary({ state, borderColor });
-      case 'ghost':
-        return ghost({ state, color });
-      default:
-        return null;
-    }
-  }}
+  ${({ icon }) =>
+    icon &&
+    `
+    display: flex;
+    align-items: center;
+  `}
+
+  ${({ iconPosition }) =>
+    iconPosition === 'right'
+      ? `
+      img {
+        margin-right: .5rem;
+      }
+    `
+      : `
+      flex-direction: row-reverse;
+      img {
+        margin-left: .5rem;
+      }
+  `}
 
   ${({
     size,
@@ -69,13 +68,37 @@ const Button = styled.button<ButtonProps>`
   }) => {
     switch (size) {
       case 'xlarge':
-        return xlarge();
+        return xlarge;
       case 'large':
-        return large();
+        return large;
       case 'medium':
-        return medium();
+        return medium;
       case 'small':
-        return small();
+        return small;
+      default:
+        return null;
+    }
+  }}
+
+  ${({
+    variant,
+    state,
+    bg,
+    borderColor,
+    color,
+    gradients,
+    degree,
+    theme: {
+      buttons: { primary, secondary, ghost },
+    },
+  }) => {
+    switch (variant) {
+      case 'primary':
+        return primary({ state, bg, gradients, degree });
+      case 'secondary':
+        return secondary({ state, borderColor });
+      case 'ghost':
+        return ghost({ state, color });
       default:
         return null;
     }
@@ -86,5 +109,3 @@ const Button = styled.button<ButtonProps>`
     color: ${({ theme }) => theme.colors.black[700]};
   }
 `;
-
-export default Button;
