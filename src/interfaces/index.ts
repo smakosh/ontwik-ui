@@ -1,6 +1,7 @@
-import { ReactChild } from 'react';
+import { ReactChild, ReactNode } from 'react';
 
 export interface ButtonProps {
+  title?: string;
   wide?: boolean;
   variant?: string;
   state?: string;
@@ -11,6 +12,9 @@ export interface ButtonProps {
   borderColor?: string;
   gradients?: [string, string];
   degree?: number;
+  icon?: (HTMLElement & SVGElement) | ReactNode;
+  iconPosition?: 'left' | 'right';
+  type?: 'submit' | 'reset' | 'button';
 }
 
 export interface InputFieldProps {

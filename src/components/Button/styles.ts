@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ButtonProps } from '../../interfaces';
 
-const Button = styled.button<ButtonProps>`
+export const StyledButton = styled.button<ButtonProps>`
   text-decoration: none;
   cursor: pointer;
   transition: 0.3s;
@@ -37,7 +37,28 @@ const Button = styled.button<ButtonProps>`
       text-align: center;
 	`}
 
-${({
+  ${({ icon }) =>
+    icon &&
+    `
+    display: flex;
+    align-items: center;
+  `}
+
+  ${({ iconPosition }) =>
+    iconPosition === 'right'
+      ? `
+      img {
+        margin-right: .5rem;
+      }
+    `
+      : `
+      flex-direction: row-reverse;
+      img {
+        margin-left: .5rem;
+      }
+  `}
+
+  ${({
     size,
     theme: {
       buttons: {
@@ -88,5 +109,3 @@ ${({
     color: ${({ theme }) => theme.colors.black[700]};
   }
 `;
-
-export default Button;
