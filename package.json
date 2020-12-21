@@ -44,11 +44,11 @@
   "module": "dist/ui.esm.js",
   "size-limit": [
     {
-      "path": "dist/ui.cjs.production.min.js",
+      "path": "dist/ontwik-ui.cjs.production.min.js",
       "limit": "20 KB"
     },
     {
-      "path": "dist/ui.esm.js",
+      "path": "dist/ontwik-ui.esm.js",
       "limit": "20 KB"
     }
   ],
@@ -84,7 +84,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ontwik-Dev/ontwik-ui.git"
+    "url": "git+https://github.com/smakosh/ontwik-ui"
   },
   "keywords": [
     "components",
@@ -92,7 +92,7 @@
     "headless"
   ],
   "bugs": {
-    "url": "https://github.com/Ontwik-Dev/ontwik-ui/issues"
+    "url": "https://github.com/smakosh/ontwik-ui/issues"
   },
-  "homepage": "https://github.com/Ontwik-Dev/ontwik-ui#readme"
+  "homepage": "https://github.com/smakosh/ontwik-ui#readme"
 }
