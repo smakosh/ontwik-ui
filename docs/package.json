@@ -10,12 +10,10 @@
   "dependencies": {
     "next": "^10.0.3",
     "nextra": "^0.3.2",
-    "nextra-theme-docs": "^1.0.4"
-  },
-  "alias": {
-    "react": "../node_modules/react",
-    "react-dom": "../node_modules/react-dom/profiling",
-    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
+    "nextra-theme-docs": "^1.0.4",
+    "ontwik-ui": "^0.0.4",
+    "react": "16",
+    "react-dom": "16"
   },
   "devDependencies": {}
 }
