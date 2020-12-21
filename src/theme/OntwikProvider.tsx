@@ -1,13 +1,10 @@
-import React, { ReactChild } from 'react';
+import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { OntwikProviderProps } from '../interfaces';
 import config from './config';
 
-const OntwikProvider = ({
-  children,
-  theme,
-}: {
-  children: ReactChild;
-  theme?: any;
-}) => <ThemeProvider theme={theme || config}>{children}</ThemeProvider>;
+const OntwikProvider: FC<OntwikProviderProps> = ({ children, theme }) => (
+  <ThemeProvider theme={theme || config}>{children}</ThemeProvider>
+);
 
 export default OntwikProvider;

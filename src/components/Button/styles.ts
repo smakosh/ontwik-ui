@@ -12,13 +12,7 @@ export const StyledButton = styled.button<ButtonProps>`
       },
     },
   }) => borderRadius};
-  font-size: ${({
-    theme: {
-      buttons: {
-        default: { fontSize },
-      },
-    },
-  }) => fontSize};
+  font-size: ${({ theme }) => theme.buttons.default.fontSize};
 
   &:hover {
     transition: 0.3s;
@@ -100,7 +94,7 @@ export const StyledButton = styled.button<ButtonProps>`
       case 'ghost':
         return ghost({ state, color });
       default:
-        return null;
+        return primary({ state, bg, gradients, degree });
     }
   }}
 

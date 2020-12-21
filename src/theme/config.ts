@@ -1,9 +1,9 @@
 import colors from './colors';
 import buttons from './buttons';
 
-const config = {
+const theme = {
   colors,
   buttons,
 };
 
-export default config;
+export default theme;
