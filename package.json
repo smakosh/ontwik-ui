@@ -44,10 +44,6 @@
   "module": "dist/ontwik-ui.esm.js",
   "size-limit": [
     {
-      "path": "dist/ontwik-ui.cjs.production.min.js",
-      "limit": "20 KB"
-    },
-    {
       "path": "dist/ontwik-ui.esm.js",
       "limit": "20 KB"
     }
