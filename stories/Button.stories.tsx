@@ -1,8 +1,23 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Button, OntwikProvider } from '../src';
-import ExampleIcon from '../example/assets/example.svg';
 import { ButtonProps } from '../src/interfaces';
+
+const ExampleIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    stroke="#fff"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 8v4M12 16h.01" />
+  </svg>
+);
 
 const meta: Meta = {
   title: 'Button',
@@ -163,10 +178,10 @@ const Template: Story<
         <Button
           {...rest}
           gradients={[gradient1, gradient2]}
-          icon={icon && <img src={ExampleIcon} />}
+          icon={<ExampleIcon />}
         />
       ) : (
-        <Button {...rest} icon={icon && <img src={ExampleIcon} />} />
+        <Button {...rest} icon={<ExampleIcon />} />
       )}
     </OntwikProvider>
   );
