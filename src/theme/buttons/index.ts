@@ -64,6 +64,11 @@ export default {
     border: ${
       state ? colors.stateColors[state] : borderColor || colors.primary[900]
     } 1px solid;
+    
+    svg {
+      stroke: ${colors.primary[900]};
+      transition: .3s all;
+    }
 
     &:hover {
       background: ${
@@ -73,6 +78,11 @@ export default {
       border-color: ${
         state ? colors.stateColors[state] : borderColor || colors.primary[900]
       } 1px solid;
+
+      svg {
+        stroke: ${colors.white};
+        transition: .3s all;
+      }
     }
   `,
   ghost: ({ state, color }: StateAndColor) => `

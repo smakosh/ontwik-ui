@@ -41,13 +41,13 @@ export const StyledButton = styled.button<ButtonProps>`
   ${({ iconPosition }) =>
     iconPosition === 'right'
       ? `
-      img {
+      img, svg {
         margin-right: .5rem;
       }
     `
       : `
       flex-direction: row-reverse;
-      img {
+      img, svg {
         margin-left: .5rem;
       }
   `}
