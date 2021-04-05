@@ -189,10 +189,19 @@ const Template: Story<
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
-export const Default = Template.bind({});
+export const Primary = Template.bind({});
+export const Secondary = Template.bind({});
 
-Default.args = {
+
+Primary.args = {
   variant: 'primary',
+  size: 'large',
+  title: 'Test',
+  type: 'button',
+};
+
+Secondary.args = {
+  variant: 'secondary',
   size: 'large',
   title: 'Test',
   type: 'button',
