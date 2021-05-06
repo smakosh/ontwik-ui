@@ -168,9 +168,10 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<
-  ButtonProps & { gradient1?: string; gradient2?: string }
-> = (args) => {
+const Template: Story<ButtonProps & {
+  gradient1?: string;
+  gradient2?: string;
+}> = args => {
   const { gradient1, gradient2, icon, ...rest } = args;
   return (
     <OntwikProvider>
@@ -180,8 +181,10 @@ const Template: Story<
           gradients={[gradient1, gradient2]}
           icon={<ExampleIcon />}
         />
-      ) : (
+      ) : icon ? (
         <Button {...rest} icon={<ExampleIcon />} />
+      ) : (
+        <Button {...rest} />
       )}
     </OntwikProvider>
   );
@@ -191,7 +194,6 @@ const Template: Story<
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});
-
 
 Primary.args = {
   variant: 'primary',
