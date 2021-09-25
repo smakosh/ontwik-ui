@@ -29,4 +29,7 @@ export default {
     fontWeight: 400,
     letterSpacing: '-0.02em',
   },
+  fonts: {
+    primary: '-apple-system, sans-serif',
+  },
 };

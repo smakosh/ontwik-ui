@@ -8,8 +8,9 @@ export const StyledTypography = styled.div<TypographyProps>`
     lineHeight,
     fontWeight,
     letterSpacing,
+    fontFamily,
     theme: {
-      typography: { title, subtitle, content, paragraph, defaultTypo },
+      typography: { title, subtitle, content, paragraph, defaultTypo, fonts },
     },
   }) => {
     switch (variant) {
@@ -19,8 +20,7 @@ export const StyledTypography = styled.div<TypographyProps>`
           line-height: ${lineHeight ? `${lineHeight}px` : title.lineHeight};
           font-weight: ${fontWeight || title.fontWeight};
           letter-spacing: ${letterSpacing || title.letterSpacing};
-          font-family: '-apple-system-headline', sans-serif;
-          // TOODO: add font family from theme
+          font-family: ${fontFamily || fonts.primary};
         `;
       case 'subtitle':
         return `
@@ -28,7 +28,7 @@ export const StyledTypography = styled.div<TypographyProps>`
           line-height: ${lineHeight ? `${lineHeight}px` : subtitle.lineHeight};
           font-weight: ${fontWeight || subtitle.fontWeight};
           letter-spacing: ${letterSpacing || subtitle.letterSpacing};
-          font-family: '-apple-system-subheadline', sans-serif;
+          font-family: ${fontFamily || fonts.primary};
         `;
       case 'paragraph':
         return `
@@ -36,7 +36,7 @@ export const StyledTypography = styled.div<TypographyProps>`
           line-height: ${lineHeight ? `${lineHeight}px` : paragraph.lineHeight};
           font-weight: ${fontWeight || paragraph.fontWeight};
           letter-spacing: ${letterSpacing || paragraph.letterSpacing};
-          font-family: '-apple-system-body', sans-serif;
+          font-family: ${fontFamily || fonts.primary};
         `;
       case 'content':
         return `
@@ -44,7 +44,7 @@ export const StyledTypography = styled.div<TypographyProps>`
           line-height: ${lineHeight ? `${lineHeight}px` : content.lineHeight};
           font-weight: ${fontWeight || content.fontWeight};
           letter-spacing: ${letterSpacing || content.letterSpacing};
-          font-family: '-apple-system-tall-body', sans-serif;
+          font-family: ${fontFamily || fonts.primary};
         `;
       default:
         return `
@@ -54,7 +54,7 @@ export const StyledTypography = styled.div<TypographyProps>`
           };
           font-weight: ${fontWeight || defaultTypo.fontWeight};
           letter-spacing: ${letterSpacing || defaultTypo.letterSpacing};
-          font-family: '-apple-system-tall-body', sans-serif;
+          font-family: ${fontFamily || fonts.primary};
         `;
     }
   }}

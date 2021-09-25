@@ -3,7 +3,6 @@ import { Meta, Story } from '@storybook/react';
 import { Typography, OntwikProvider } from '../src';
 import { TypographyProps } from '../src/interfaces';
 
-
 const meta: Meta = {
   title: 'Typography',
   component: Typography,

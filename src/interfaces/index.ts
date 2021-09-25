@@ -40,6 +40,7 @@ export type TypographyProps = {
   align?: 'left' | 'center' | 'right';
   bold?: boolean;
   htmlFor?: string;
+  fontFamily?: string;
 };
 
 export type OntwikProviderProps = {
