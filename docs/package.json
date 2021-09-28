@@ -11,7 +11,7 @@
     "next": "^10.0.3",
     "nextra": "^0.3.2",
     "nextra-theme-docs": "^1.0.4",
-    "ontwik-ui": "^0.0.4",
+    "ontwik-ui": "0.0.7-canary.0",
     "react": "16",
     "react-dom": "16"
   },

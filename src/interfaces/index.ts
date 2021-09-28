@@ -28,6 +28,21 @@ export type InputFieldProps = {
   relative?: boolean;
 };
 
+export type TypographyProps = {
+  as?: React.ElementType | keyof JSX.IntrinsicElements;
+  variant: 'title' | 'subtitle' | 'paragraph' | 'content';
+  margin?: [number, number, number, number];
+  fontSize?: number;
+  lineHeight?: number;
+  color?: string;
+  letterSpacing?: string;
+  fontWeight?: number;
+  align?: 'left' | 'center' | 'right';
+  bold?: boolean;
+  htmlFor?: string;
+  fontFamily?: string;
+};
+
 export type OntwikProviderProps = {
   theme?: typeof config;
 };
