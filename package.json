@@ -1,5 +1,5 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.8-canary.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -23,7 +23,8 @@
     "start:example": "cd example && yarn start",
     "dev:docs": "cd docs && yarn run dev",
     "build:docs": "cd docs && yarn build",
-    "start:docs": "cd docs && yarn start"
+    "start:docs": "cd docs && yarn start",
+    "canary": "yarn version --prerelease --preid=canary && yarn publish --tag canary"
   },
   "peerDependencies": {
     "react": ">=16"
