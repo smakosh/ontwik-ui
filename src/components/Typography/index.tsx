@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { TypographyProps } from '../../interfaces';
 import { StyledTypography } from './styles';
 
-const Typography: FC<TypographyProps> = ({
+const Typography: React.FC<TypographyProps> = ({
   children,
   variant,
   bold,

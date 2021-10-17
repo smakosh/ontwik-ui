@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Typography, OntwikProvider } from '../src';
 import { TypographyProps } from '../src/interfaces';

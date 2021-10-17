@@ -9,15 +9,16 @@ export type StateAndColor = {
   gradients?: [string, string];
 };
 
-export type ButtonProps = StateAndColor & {
-  title?: string;
-  wide?: boolean;
-  variant?: 'primary' | 'secondary' | 'ghost';
-  size?: 'xlarge' | 'large' | 'medium' | 'small';
-  uppercase?: boolean;
-  icon?: (HTMLElement & SVGElement) | ReactNode | ReactElement;
-  iconPosition?: 'left' | 'right';
-};
+export type ButtonProps = React.ComponentPropsWithoutRef<'button'> &
+  StateAndColor & {
+    title?: string;
+    wide?: boolean;
+    variant?: 'primary' | 'secondary' | 'ghost';
+    size?: 'xlarge' | 'large' | 'medium' | 'small';
+    uppercase?: boolean;
+    icon?: (HTMLElement & SVGElement) | ReactNode | ReactElement;
+    iconPosition?: 'left' | 'right';
+  };
 
 export type InputFieldProps = {
   label?: string;

@@ -3837,10 +3837,10 @@ once@^1.3.0, once@^1.3.1, once@^1.4.0:
   dependencies:
     wrappy "1"
 
-ontwik-ui@0.0.8-canary.0:
-  version "0.0.8-canary.0"
-  resolved "https://registry.yarnpkg.com/ontwik-ui/-/ontwik-ui-0.0.8-canary.0.tgz#17b40d6336319a7aee2d6f285f69a56b6ce0fa44"
-  integrity sha512-+kYuP0eaetvXb0qeLHys/ZhupPK78ZeV3dvFu2nGYVb1TYkmF9/tpxBAvqt0YgMFssdvjPbn+ve0h96QJOiJaA==
+ontwik-ui@0.0.8-canary.1:
+  version "0.0.8-canary.1"
+  resolved "https://registry.yarnpkg.com/ontwik-ui/-/ontwik-ui-0.0.8-canary.1.tgz#2f0ad4f76369f08c811787136cedfae5f6cfa2db"
+  integrity sha512-iDwPDqM05BODGSOmbpCIFe9oU/csxSEfBhSKbDtIp4aPtWYPMe019HSLrTKH5k+OYf2yV41IUFktDnwRgULqgg==
   dependencies:
     styled-components "^5.2.0"
 

@@ -3,10 +3,7 @@ import { ButtonProps } from '../../interfaces';
 import { StyledButton } from './styles';
 
 const Button = React.forwardRef(
-  (
-    props: React.ComponentPropsWithoutRef<'button'> & ButtonProps,
-    ref: React.Ref<HTMLButtonElement>
-  ) => (
+  (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => (
     <StyledButton ref={ref} {...props}>
       {props.icon && props.icon}
       <span>{props.title}</span>
