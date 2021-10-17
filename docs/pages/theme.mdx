@@ -1,7 +1,58 @@
+# Theme
+
+> You're viewing a WIP version of the theme.
+
+```ts
+import colors from './colors';
+import buttons from './buttons';
+import typography from './typography';
+
+const theme = {
+  colors,
+  buttons,
+  typography,
+};
+
+export default theme;
+```
+
+## Colors
+
+```ts
+const colors = {
+  primary: {
+    900: '#007974',
+    700: '#7EA2A0',
+  },
+  secondary: {
+    900: '#1D7EEF',
+    700: '#5098EB',
+  },
+  black: {
+    900: '#000',
+    700: '#585858',
+    400: '#8D8A8A',
+    200: '#bbb',
+  },
+  red: {
+    200: '#F88383',
+  },
+  white: '#fff',
+  stateColors: {
+    danger: '#FF4B4B',
+    success: '#2ABF24',
+    warning: '#F89D33',
+  },
+};
+```
+
+## Buttons
+
+```ts
 import colors from '../colors';
 import { StateAndColor } from '../../interfaces';
 
-export default {
+const buttons = {
   default: {
     fontSize: '12pt',
     borderRadius: '0.3rem',
@@ -76,3 +127,44 @@ export default {
     border: none;
   `,
 };
+```
+
+## Typography
+
+```ts
+const typography = {
+  defaultTypo: {
+    fontSize: '12pt',
+    lineHeight: '1.5',
+    fontWeight: 400,
+    letterSpacing: '0.05em',
+  },
+  title: {
+    fontSize: '32pt',
+    lineHeight: '1.5',
+    fontWeight: 400,
+    letterSpacing: '0.05em',
+  },
+  subtitle: {
+    fontSize: '24pt',
+    lineHeight: '1.5',
+    fontWeight: 400,
+    letterSpacing: '0.05em',
+  },
+  paragraph: {
+    fontSize: '18pt',
+    lineHeight: '1.5',
+    fontWeight: 400,
+    letterSpacing: '0.05em',
+  },
+  content: {
+    fontSize: '14pt',
+    lineHeight: '1.5',
+    fontWeight: 400,
+    letterSpacing: '0.05em',
+  },
+  fonts: {
+    primary: '-apple-system, sans-serif',
+  },
+};
+```

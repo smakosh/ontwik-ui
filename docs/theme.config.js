@@ -1,6 +1,7 @@
 export default {
-  repository: 'https://github.com/Ontwik-Dev/ontwik-ui',
-  docsRepository: 'https://github.com/Ontwik-Dev/ontwik-ui',
+  github: 'https://github.com/Ontwik-Dev/ontwik-ui',
+  docsRepositoryBase:
+    'https://github.com/Ontwik-Dev/ontwik-ui/blob/master/pages',
   branch: 'master',
   path: '/',
   titleSuffix: ' – Ontwik UI',
@@ -8,9 +9,9 @@ export default {
   prevLinks: true,
   search: true,
   customSearch: null,
-  darkMode: true,
+  darkMode: false,
   footer: true,
-  footerText: 'MIT 2020 © Smakosh LLC.',
+  footerText: 'MIT 2021 © Smakosh',
   footerEditOnGitHubLink: true, // will link to the docs repo
   logo: (
     <>

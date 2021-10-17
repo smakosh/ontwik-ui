@@ -125,14 +125,6 @@ const meta: Meta = {
         options: [true, false],
       },
     },
-    degree: {
-      name: 'degree',
-      type: { name: 'number', required: false },
-      description: 'Gradient degree',
-      control: {
-        type: 'number',
-      },
-    },
     icon: {
       name: 'icon',
       type: { name: 'string', required: false },
@@ -168,10 +160,12 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<ButtonProps & {
-  gradient1?: string;
-  gradient2?: string;
-}> = args => {
+const Template: Story<
+  ButtonProps & {
+    gradient1?: string;
+    gradient2?: string;
+  }
+> = (args) => {
   const { gradient1, gradient2, icon, ...rest } = args;
   return (
     <OntwikProvider>
@@ -190,10 +184,9 @@ const Template: Story<ButtonProps & {
   );
 };
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});
+export const Ghost = Template.bind({});
 
 Primary.args = {
   variant: 'primary',
@@ -204,6 +197,13 @@ Primary.args = {
 
 Secondary.args = {
   variant: 'secondary',
+  size: 'large',
+  title: 'Test',
+  type: 'button',
+};
+
+Ghost.args = {
+  variant: 'ghost',
   size: 'large',
   title: 'Test',
   type: 'button',

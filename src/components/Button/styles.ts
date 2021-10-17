@@ -4,7 +4,7 @@ import { ButtonProps } from '../../interfaces';
 export const StyledButton = styled.button<ButtonProps>`
   text-decoration: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.4s ease-in-out;
   border-radius: ${({
     theme: {
       buttons: {
@@ -15,7 +15,7 @@ export const StyledButton = styled.button<ButtonProps>`
   font-size: ${({ theme }) => theme.buttons.default.fontSize};
 
   &:hover {
-    transition: 0.3s;
+    transition: all 0.4s ease-in-out;
   }
 
   ${({ uppercase }) =>
@@ -81,20 +81,19 @@ export const StyledButton = styled.button<ButtonProps>`
     borderColor,
     color,
     gradients,
-    degree,
     theme: {
       buttons: { primary, secondary, ghost },
     },
   }) => {
     switch (variant) {
       case 'primary':
-        return primary({ state, bg, gradients, degree });
+        return primary({ state, bg, gradients });
       case 'secondary':
         return secondary({ state, borderColor });
       case 'ghost':
         return ghost({ state, color });
       default:
-        return primary({ state, bg, gradients, degree });
+        return primary({ state, bg, gradients });
     }
   }}
 
