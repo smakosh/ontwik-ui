@@ -1,4 +1,4 @@
-import { ReactChild, ReactNode } from 'react';
+import { ReactChild, ReactElement, ReactNode } from 'react';
 import { config } from '../theme';
 
 export type StateAndColor = {
@@ -7,19 +7,18 @@ export type StateAndColor = {
   bg?: string;
   borderColor?: string;
   gradients?: [string, string];
-  degree?: number;
 };
 
-export type ButtonProps = StateAndColor & {
-  title?: string;
-  wide?: boolean;
-  variant?: 'primary' | 'secondary' | 'ghost';
-  size?: string;
-  uppercase?: boolean;
-  icon?: (HTMLElement & SVGElement) | ReactNode;
-  iconPosition?: 'left' | 'right';
-  type?: 'submit' | 'reset' | 'button';
-};
+export type ButtonProps = React.ComponentPropsWithoutRef<'button'> &
+  StateAndColor & {
+    title?: string;
+    wide?: boolean;
+    variant?: 'primary' | 'secondary' | 'ghost';
+    size?: 'xlarge' | 'large' | 'medium' | 'small';
+    uppercase?: boolean;
+    icon?: (HTMLElement & SVGElement) | ReactNode | ReactElement;
+    iconPosition?: 'left' | 'right';
+  };
 
 export type InputFieldProps = {
   label?: string;

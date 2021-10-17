@@ -2,15 +2,9 @@ import { Button } from 'ontwik-ui';
 
 # Button
 
-<br />
+## Variants
 
-<Button type="button" variant="primary" size="large" title="Test" />
-
-```jsx
-<Button type="button" variant="primary" size="large" title="Test" />
-```
-
-#### Variants
+### Primary
 
 <br />
 
@@ -20,11 +14,19 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="primary" size="large" title="Test" />
 ```
 
+### Secondary
+
+<br />
+
 <Button type="button" variant="secondary" size="large" title="Test" />
 
 ```jsx
 <Button type="button" variant="secondary" size="large" title="Test" />
 ```
+
+### Ghost
+
+<br />
 
 <Button type="button" variant="ghost" size="large" title="Test" />
 
@@ -32,7 +34,11 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="ghost" size="large" title="Test" />
 ```
 
-#### Sizes
+## Sizes
+
+### Primary
+
+<br />
 
 <Button type="button" variant="primary" size="xlarge" title="Test" /> <Button
   type="button"
@@ -53,6 +59,10 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="primary" size="small" title="Test" />
 ```
 
+### Secondary
+
+<br />
+
 <Button type="button" variant="secondary" size="xlarge" title="Test" /> <Button
   type="button"
   variant="secondary"
@@ -71,6 +81,10 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="secondary" size="medium" title="Test" />
 <Button type="button" variant="secondary" size="small" title="Test" />
 ```
+
+### Ghost
+
+<br />
 
 <Button type="button" variant="ghost" size="xlarge" title="Test" /> <Button
   type="button"
@@ -91,7 +105,11 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="ghost" size="small" title="Test" />
 ```
 
-#### States
+## States
+
+### Primary
+
+<br />
 
 <Button
   type="button"
@@ -119,6 +137,10 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="primary" state="success" size="large" title="Test" />
 ```
 
+### Secondary
+
+<br />
+
 <Button
   type="button"
   variant="secondary"
@@ -144,6 +166,10 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="secondary" state="warning" size="large" title="Test" />
 <Button type="button" variant="secondary" state="success" size="large" title="Test" />
 ```
+
+### Ghost
+
+<br />
 
 <Button
   type="button"
@@ -171,21 +197,21 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="ghost" state="success" size="large" title="Test" />
 ```
 
-#### Gradient
+## Gradient
+
+<br />
 
 <Button
   type="button"
   variant="primary"
   size="large"
   gradients={['#FBAB7E', '#F7CE68']}
-  degree={62}
   title="Test"
 /> <Button
   type="button"
   variant="primary"
   size="large"
   gradients={['#21D4FD', '#B721FF']}
-  degree={19}
   title="Test"
 />
 
@@ -195,7 +221,6 @@ import { Button } from 'ontwik-ui';
   variant="primary"
   size="large"
   gradients={['#FBAB7E', '#F7CE68']}
-  degree={62}
   title="Test"
 />
 <Button
@@ -203,12 +228,13 @@ import { Button } from 'ontwik-ui';
   variant="primary"
   size="large"
   gradients={['#21D4FD', '#B721FF']}
-  degree={19}
   title="Test"
 />
 ```
 
-#### Custom
+## Custom
+
+<br />
 
 <Button
   type="button"
@@ -237,7 +263,9 @@ import { Button } from 'ontwik-ui';
 <Button type="button" variant="ghost" size="large" color="#B721FF" title="Test" />
 ```
 
-#### With Icon
+## With an icon
+
+<br />
 
 <Button
   icon={<img src="/example.svg" alt="test" />}
