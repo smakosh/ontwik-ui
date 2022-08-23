@@ -2,120 +2,62 @@
 
 A headless UI library and CLI theme generator
 
-## Commands
+Powered by:
 
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
+- 🏎 [Turborepo](https://turborepo.org) — High-performance build system for Monorepos
+- 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
+- 🛠 [Tsup](https://github.com/egoist/tsup) — TypeScript bundler powered by esbuild
+- 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
 
-The recommended workflow is to run TSDX in one terminal:
+As well as a few others tools preconfigured:
+
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs
+- [GitHub Actions](https://github.com/changesets/action) for fully automated package publishing
+
+## Getting Started
+
+[Docs](https://ontwik-ui.smakosh.com/)
+
+### Useful Commands
+
+- `yarn dev` - Run all packages locally and preview with Storybook
+- `yarn build` - Build all packages including the Storybook site
+- `yarn lint` - Lint all packages
+- `yarn changeset` - Generate a changeset
+- `yarn clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+
+## Apps & Packages
+
+This monorepo includes the following packages and applications:
+
+- `apps/docs`: Component documentation site with Storybook
+- `apps/public-docs`: Public Docs powered by [Nextra](https://nextra.vercel.app/)
+- `packages/ontwik-ui`: Core React components
+
+Each package and app is 90% [TypeScript](https://www.typescriptlang.org/). Yarn Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-W` workspaces flag with `yarn add`.
+
+## Versioning & Publishing Packages
+
+This repository uses [Changesets](https://github.com/changesets/changesets) to manage versions, create changelogs, and publish to npm. It's preconfigured so you can start publishing packages immediatley.
+
+### Generating the Changelog
+
+To generate your changelog, run `yarn changeset` locally:
+
+1. **Which packages would you like to include?** – This shows which packages and changed and which have remained the same. By default, no packages are included. Press `space` to select the packages you want to include in the `changeset`.
+1. **Which packages should have a major bump?** – Press `space` to select the packages you want to bump versions for.
+1. If doing the first major version, confirm you want to release.
+1. Write a summary for the changes.
+1. Confirm the changeset looks as expected.
+1. A new Markdown file will be created in the `changeset` folder with the summary and a list of the packages included.
+
+### Releasing
+
+When you push your code to GitHub, the [GitHub Action](https://github.com/changesets/action) will run the `release` script defined in the root `package.json`:
 
 ```bash
-npm start # or yarn start
+turbo run build --filter=docs^... --filter=public-docs^... && changeset publish
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
-
-Then run either Storybook or the example playground:
-
-### Storybook
-
-Run inside another terminal:
-
-```bash
-yarn storybook
-```
-
-This loads the stories from `./stories`.
-
-> NOTE: Stories should reference the components as if using the library, similar to the example playground. This means importing from the root project directory. This has been aliased in the tsconfig and the storybook webpack config as a helper.
-
-### Example
-
-Then run the example inside another:
-
-```bash
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
-```
-
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, we use [Parcel's aliasing](https://parceljs.org/module_resolution.html#aliases).
-
-To do a one-off build, use `npm run build` or `yarn build`.
-
-To run tests, use `npm test` or `yarn test`.
-
-## Configuration
-
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`.
-
-### Bundle analysis
-
-Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-/stories
-  Thing.stories.tsx # EDIT THIS
-/.storybook
-  main.js
-  preview.js
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
-```
-
-### Rollup
-
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### GitHub Actions
-
-Two actions are added by default:
-
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [size-limit](https://github.com/ai/size-limit)
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
-```
-
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
+Turborepo runs the `build` script for all publishable packages (excluding docs & public-docs) and publishes the packages to npm.
