@@ -1,7 +1,7 @@
 export default {
   github: "https://github.com/smakosh/ontwik-ui",
   docsRepositoryBase:
-    "https://github.com/smakosh/ontwik-ui-2/blob/main/apps/public-docs/pages",
+    "https://github.com/smakosh/ontwik-ui/blob/master/apps/public-docs/pages",
   branch: "master",
   path: "/",
   titleSuffix: " – Ontwik UI",
