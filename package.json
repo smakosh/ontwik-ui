@@ -1,108 +1,21 @@
 {
-  "version": "0.0.8",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
   ],
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint src test",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "start:example": "cd example && yarn start",
-    "dev:docs": "cd docs && yarn run dev",
-    "build:docs": "cd docs && yarn build",
-    "start:docs": "cd docs && yarn start",
-    "canary": "yarn version --prerelease --preid=canary && yarn publish --tag canary"
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... --filter=public-docs^... && changeset publish"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "ontwik-ui",
-  "author": "smakosh",
-  "module": "dist/ontwik-ui.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/ontwik-ui.cjs.production.min.js",
-      "limit": "20 KB"
-    },
-    {
-      "path": "dist/ontwik-ui.esm.js",
-      "limit": "20 KB"
-    }
-  ],
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@size-limit/preset-small-lib": "^4.6.0",
-    "@storybook/addon-essentials": "^6.3.8",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.3.8",
-    "@storybook/addons": "^6.3.8",
-    "@storybook/react": "^6.3.8",
-    "@types/react": "^16.9.51",
-    "@types/react-dom": "^16.9.8",
-    "@types/styled-components": "^5.1.3",
-    "@typescript-eslint/eslint-plugin": "^4.31.2",
-    "babel-loader": "^8.1.0",
-    "chromatic": "^5.7.1",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^4.3.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-is": "^16.13.1",
-    "rollup-plugin-postcss": "^4.0.0",
-    "size-limit": "^4.6.0",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.0.1",
-    "typescript": "^4.2.3"
-  },
-  "dependencies": {
-    "styled-components": "^5.2.0"
-  },
-  "description": "A headless UI library.",
-  "directories": {
-    "example": "example",
-    "test": "test",
-    "docs": "docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smakosh/ontwik-ui"
-  },
-  "keywords": [
-    "components",
-    "theme",
-    "headless"
-  ],
-  "bugs": {
-    "url": "https://github.com/smakosh/ontwik-ui/issues"
-  },
-  "homepage": "https://github.com/smakosh/ontwik-ui#readme",
-  "resolutions": {
-    "**/@typescript-eslint/eslint-plugin": "^4.1.1",
-    "**/@typescript-eslint/parser": "^4.1.1"
+    "@changesets/cli": "^2.22.0",
+    "turbo": "latest"
   }
 }
