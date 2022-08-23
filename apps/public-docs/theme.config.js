@@ -13,6 +13,7 @@ export default {
   footer: true,
   footerText: "MIT 2022 © Smakosh",
   footerEditOnGitHubLink: true, // will link to the docs repo
+  defaultTheme: "light",
   logo: (
     <>
       <span>Ontwik UI - </span>
@@ -31,5 +32,5 @@ export default {
         content="Ontwik UI: the headless UI React library"
       />
     </>
-  ),
+  )
 };
